@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { Link } from "react-router-dom";
-import { Column } from "react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import AdminSidebar from "../../components/admin/AdminSidebar";
 import TableHOC from "../../components/admin/TableHOC";
 
@@ -41,35 +41,36 @@ const arr: Array<DataType> = [
   },
 ];
 
-const columns: Column<DataType>[] = [
+const columns: ColumnDef<DataType>[] = [
   {
-    Header: "Avatar",
-    accessor: "user",
+    header: "Avatar",
+    accessorKey: "user",
   },
   {
-    Header: "Amount",
-    accessor: "amount",
+    header: "Amount",
+    accessorKey: "amount",
   },
   {
-    Header: "Discount",
-    accessor: "discount",
+    header: "Discount",
+    accessorKey: "discount",
   },
   {
-    Header: "Quantity",
-    accessor: "quantity",
+    header: "Quantity",
+    accessorKey: "quantity",
   },
   {
-    Header: "Status",
-    accessor: "status",
+    header: "Status",
+    accessorKey: "status",
   },
   {
-    Header: "Action",
-    accessor: "action",
+    header: "Action",
+    accessorKey: "action",
   },
 ];
 
 const Transaction = () => {
-  const [rows, setRows] = useState<DataType[]>(arr);
+  // const [rows, setRows] = useState<DataType[]>(arr);
+  const [rows] = useState<DataType[]>(arr);
 
   const Table = TableHOC<DataType>(
     columns,

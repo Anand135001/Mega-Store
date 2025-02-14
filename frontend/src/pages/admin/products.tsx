@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Column } from "react-table";
+import { ColumnDef } from "@tanstack/react-table";
 import AdminSidebar from "../../components/admin/AdminSidebar";
 import TableHOC from "../../components/admin/TableHOC";
 
@@ -13,26 +13,26 @@ interface DataType {
   action: ReactElement;
 }
 
-const columns: Column<DataType>[] = [
+const columns: ColumnDef<DataType>[] = [
   {
-    Header: "Photo",
-    accessor: "photo",
+    header: "Photo",
+    accessorKey: "photo",
   },
   {
-    Header: "Name",
-    accessor: "name",
+    header: "Name",
+    accessorKey: "name",
   },
   {
-    Header: "Price",
-    accessor: "price",
+    header: "Price",
+    accessorKey: "price",
   },
   {
-    Header: "Stock",
-    accessor: "stock",
+    header: "Stock",
+    accessorKey: "stock",
   },
   {
-    Header: "Action",
-    accessor: "action",
+    header: "Action",
+    accessorKey: "action",
   },
 ];
 
@@ -60,7 +60,9 @@ const arr: Array<DataType> = [
 ];
 
 const Products = () => {
-  const [rows, setRows] = useState<DataType[]>(arr);
+  // const [rows, setRows] = useState<DataType[]>(arr);
+  const [rows] = useState<DataType[]>(arr);
+  
 
   const Table = TableHOC<DataType>(
     columns,
