@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import Loding from "./components/loading"
+import Header from "./components/header";
 
 const Home = lazy(() => import("./pages/home"));
 const Search = lazy(() => import("./pages/search"));
@@ -29,6 +30,8 @@ function App() {
   return (
     <Router>
       {/* ==== HEADER ====*/}
+      <Header />
+
       <Suspense fallback={<Loding />}>
         <Routes>
           <Route path="/" element={<Home />} />
