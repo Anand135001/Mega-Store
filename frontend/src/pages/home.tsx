@@ -10,7 +10,7 @@ const Home = () => {
       <section></section>
 
       <h1>Latest products
-        <Link to="/search" className="findmore">More</Link>
+        <Link to="/search" className="find-more">More</Link>
       </h1> 
 
       <main>

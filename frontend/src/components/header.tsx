@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaHome, FaSearch, FaShoppingBag, FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { FaSearch, FaShoppingBag, FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const user = {_id: "abcd", role: "admin"};
@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <nav className="header">
-       <Link onClick={() => setIsOpen(false)} to={'/'}> <FaHome /> </Link>
+       <Link onClick={() => setIsOpen(false)} to={'/'}> Home </Link>
        <Link onClick={() => setIsOpen(false)} to={'/search'}> <FaSearch /> </Link>
        <Link onClick={() => setIsOpen(false)} to={'/Cart'}> <FaShoppingBag /> </Link>
 
